@@ -431,6 +431,7 @@ input {
 .product-thumb > img {
     width: 100%;
     height: 100%;
+    cursor: pointer;
     transition: transform .2s ease;
 }
 
@@ -481,7 +482,7 @@ input {
 .new-product::before {
     content: "";
     background-color: #ffffff40;
-    width: 122%;
+    width: 91vw;
     height: 2px;
     top:0;
     position: absolute;

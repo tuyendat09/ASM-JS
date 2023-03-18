@@ -9,20 +9,20 @@ console.log(nextBtn)
 let current = 1;
 slider.style.transform = `translateX(${-imgWidth}px)`;
 
-setInterval(() => {
-    if (current >= sliderImg.length - 1) return;
-    slider.style.transition = '.7s ease-in-out transform';
-    current++;
-    slider.style.transform = `translateX(${-imgWidth * current}px)`;
-    
-},5000)
+     let autoSlide = setInterval(() => {
+        if (current >= sliderImg.length - 1) return;
+        slider.style.transition = '.7s ease-in-out transform';
+        current++;
+        slider.style.transform = `translateX(${-imgWidth * current}px)`;
+    },3000)
 
 prevBtn.addEventListener('click', () => {
     if (current <= 0) return;
     slider.style.transition = '.7s ease-in-out transform';
     current--;
     slider.style.transform = `translateX(${-imgWidth * current}px)`;
-
+    clearInterval(autoSlide);
+    setTimeout(autoSlide,10000)
 })
 
 nextBtn.addEventListener('click', () => {
@@ -30,6 +30,8 @@ nextBtn.addEventListener('click', () => {
     slider.style.transition = '.7s ease-in-out transform';
     current++;
     slider.style.transform = `translateX(${-imgWidth * current}px)`;
+    clearInterval(autoSlide);
+    setTimeout(autoSlide,10000)
 })
 
 slider.addEventListener('transitionend', () => {

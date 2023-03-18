@@ -1,0 +1,202 @@
+
+/*# sourceMappingURL=style.css.map */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap');
+
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Condensed",sans-serif;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #000;
+    height: 100vh;
+    display: flex;;
+    flex-direction: column;
+}
+
+input {
+    all:unset;
+}
+
+/* RESET CSS */
+.active-nav {
+    color: #fff000 !important;
+}
+
+.header {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 99;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.logo-brand {
+    position: absolute;
+    top: 15%;
+    left: 33px;
+}
+
+.block-navigation {
+    display: flex;
+    line-height: 65px;
+    font-size: 1em;
+}
+
+
+.nav-item:hover .nav-link {
+    color:#fff000;
+}
+
+.nav-link {
+    color: #fff;
+    padding:10px;
+    display:inline-block;
+    position: relative;
+    font-family: "Barlow Condensed";
+    font-size: 1.5rem;
+    font-weight: 500;
+    scroll-behavior: smooth;
+    text-shadow: 0 2px 3px #000000;
+    user-select: none;
+}
+
+.nav-link::before {
+    content: "";
+    width:0px;
+    height: 2px;
+    background-color: #fff000;
+    display: inline-block;
+    position: absolute;
+    bottom: 25px;
+    transition: .4s ease;
+}
+
+.nav-item:hover .nav-link::before {
+    width: 40px;
+}
+
+/* ANIAMTE */
+
+.animate-note-one {
+    background: url(../imgs/ico_onpu_1.png), no-repeat;
+    background-size: cover;
+    height: 614px;
+    width: 341px;
+    position: fixed;
+    top: 222px;
+    right: -8vw;
+    left: auto;
+    animation: note-move 3s 0s ease infinite;
+    z-index: -1;
+
+}
+
+.animate-note-two {
+    background: url(../imgs//ico_onpu_2.png), no-repeat;
+    background-size: cover;
+    height: 337px;
+    width: 219px;
+    position: fixed;
+    top: auto;
+    left: 2vw;
+    bottom: 10vh;
+    animation: note-move 3s 0s ease infinite;
+    z-index: -1;
+}
+
+/* CONTENT */
+/* CONTENT CSS*/
+#content {
+    margin-top: 100px;
+    background-color: #fff000;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 40px auto;
+    
+}
+
+.wrapper .head {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 24px;
+    text-align: center;
+    border-bottom: 2px solid #000;
+}
+
+.wrapper p {
+    text-align: center;
+    margin-top: 55px;
+}
+
+.wrapper .action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0 100px 0;
+}
+
+.wrapper button {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #303030;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+/* FOTTER */
+.footer {
+    position: absolute;
+    color:black;
+    text-align: center;
+    background: url(../imgs/fotter-img.png);
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-inner {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 31px;
+}
+
+.footer-nav {
+    display:flex;
+    padding:20px;
+    gap: 30px;
+}
+
+.footer-nav-links {
+    color:black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
