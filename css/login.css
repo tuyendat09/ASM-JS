@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+a {
+    all: unset;
+}
+
+
+/*  */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Montserrat",sans-serif;
+	background: #201e1e;
+}
+
+.container {
+    width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-container {
+    display:flex;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #dedede;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 6px;
+    cursor: pointer;
+}
+
+.sign-up, .sign-in {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+}
+
+.sign-in {
+    z-index: 3;
+    transition: .6s ease-in-out;
+
+}
+
+.sign-up {
+    z-index: 2;
+    opacity: 0;
+    transition: .6s ease-in-out;
+}
+
+.sign-up form,
+.sign-in form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 50px;
+    transform: translateX(100%);
+    background-color: #fff;
+}
+
+
+
+.sign-up input,
+.sign-in input {
+    background-color: #eee;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: none;
+}
+
+
+.form-btn {
+    background-color: #ff4b2b;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 40px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.form-btn:active {
+    transform: scale(.95);
+}
+
+.forgot-pass {
+    cursor: pointer;
+}
+
+/* OVERLAY */
+
+.overlay-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 999;
+    overflow: hidden;
+    transition: .6s ease-in-out;
+}
+
+.overlay {
+    background: url(../imgs/test.jpg) no-repeat 100%/cover;
+    width: 200%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;    
+    transition: .6s ease-in-out;
+}
+
+.overlay-left,
+.overlay-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color:white;
+    width: 50%;
+}
+
+.overlay-text {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.overlay-btn {
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.overlay-btn:active {
+    transform: scale(.95);
+}
+
+/* RIGHT PANEL ACTIVE*/
+
+.right-panel-active .overlay {
+    transform: translateX(-50%);
+}
+
+.right-panel-active .overlay-container {
+    transform: translateX(100%);
+}
+
+.right-panel-active .sign-up {
+    transform: translateX(-100%);
+    opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+
+.right-panel-active .sign-in {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* ANIMATE */
+.animate-note-one {
+    background: url(../imgs/ico_onpu_1.png), no-repeat;
+    background-size: cover;
+    height: 614px;
+    width: 341px;
+    position: fixed;
+    top: 222px;
+    right: -8vw;
+    left: auto;
+    animation: note-move 3s 0s ease infinite;
+    z-index: -1;
+
+}
+
+.animate-note-two {
+    background: url(../imgs//ico_onpu_2.png), no-repeat;
+    background-size: cover;
+    height: 337px;
+    width: 219px;
+    position: fixed;
+    top: auto;
+    left: 2vw;
+    bottom: 10vh;
+    animation: note-move 3s 0s ease infinite;
+    z-index: -1;
+}
